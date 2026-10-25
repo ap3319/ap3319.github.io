@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connect 4 Robotic Arm | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="ihm.html">In Hand Manipulation for Assembly Lines</a>
+    <a href="fyp.html">Final Year Project</a>
+  </nav>
+
+  <main class="full">
+    <section class="band">
+      <div class="wrap">
+        <span class="tag">Final Year Project</span>
+        <h1>Connect 4 Playing Robotic Arm</h1>
+        <p>A robotic arm that plays Connect 4, designed as an outreach demonstrator. Two cameras let it see the board and the discs, and a vacuum gripper lets it place its own pieces.</p>
+        <img class="figure" src="images/connect4-arm.jpg" alt="The Connect 4 playing robotic arm">
+      </div>
+    </section>
+
+    <section class="band band-dark">
+      <div class="wrap">
+        <span class="tag">Sec 01</span>
+        <h2>How It Works</h2>
+
+        <h3>Seeing the board</h3>
+        <p>ArUco markers fixed to the board give its position and orientation relative to the camera, through a perspective-n-point solve. Each camera is calibrated beforehand with ChArUco boards so that this estimate is accurate. Discs are found by colour segmentation in HSV space, and the filament for the 3D-printed discs was chosen to make that segmentation reliable.</p>
+
+        <h3>Moving the arm</h3>
+        <p>Visual servoing uses the position of the target in the camera image to drive the base rotation and the reach of the arm.</p>
+
+        <h3>Handling the discs</h3>
+        <p>A vacuum gripper picks up each disc and releases it above the chosen column.</p>
+
+        <h3>Interface and safety</h3>
+        <p>A web interface built with Flask runs on a Raspberry Pi. [Describe what a user can do with it.] An emergency stop relay circuit provides a hardware safety cut-off.</p>
+      </div>
+    </section>
+
+    <section class="band band-blue">
+      <div class="wrap">
+        <span class="tag">Sec 02</span>
+        <h2>Results</h2>
+        <p>[Add your headline results here, such as placement accuracy and the time taken per move.]</p>
+      </div>
+    </section>
+
+    <section class="band band-dark">
+      <div class="wrap">
+        <span class="tag">Sec 03</span>
+        <h2>Demo Video</h2>
+        <video controls src="images/connect4-demo.mp4"></video>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+</html>

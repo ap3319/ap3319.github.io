@@ -1,0 +1,383 @@
+:root {
+  --bg: #0b2a4a;
+  --grid-minor: rgba(255, 255, 255, 0.06);
+  --grid-major: rgba(255, 255, 255, 0.14);
+  --line: rgba(255, 255, 255, 0.35);
+  --text: #e6f1ff;
+  --muted: #9db8d6;
+  --accent: #ffb347;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(var(--grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+
+a {
+  color: var(--accent);
+}
+
+.tag {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.site-name,
+nav,
+footer {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.site-name {
+  display: block;
+  padding: 1rem 2rem 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(11, 42, 74, 0.92);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+main > img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--line);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  background: rgba(7, 32, 58, 0.75);
+}
+
+.project img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+.project h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.project p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 6rem 0 18rem;
+}
+
+.hero h1 {
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.hero-text p {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+/*prof image*/
+.profile {
+  flex-shrink: 0;
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  outline: 1px solid var(--line);
+  outline-offset: 10px;
+}
+
+@media (max-width: 40rem) {
+  .hero {
+    flex-direction: column-reverse;
+    min-height: auto;
+    text-align: center;
+  }
+}
+
+/*alternating colours*/
+main.full {
+  max-width: none;
+  padding: 0;
+}
+
+.band {
+  padding: 4rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.band:first-child {
+  border-top: 0;
+}
+
+.wrap {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/*home page background bands*/
+
+.band-dark {
+  background: rgba(7, 32, 58, 0.75);
+}
+
+.band-blue {
+  background: rgba(18, 64, 107, 0.7);
+}
+
+
+.band-center {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/*two columns*/
+
+.edu-row {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.edu-row h3 {
+  margin: 0 0 0.25rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.edu-row h4 {
+  margin: 0 0 0.5rem;
+}
+
+.edu-row h4:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.edu-row p,
+.edu-row ul {
+  margin: 0 0 1rem;
+}
+
+.edu-row ul {
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 40rem) {
+  .edu-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.figure {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--line);
+}
+
+/*ihm*/
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.split figure {
+  margin: 0;
+}
+
+.split img,
+.split video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 1px solid var(--line);
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.band a {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 40rem) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.band-light {
+  background: rgba(233, 237, 242, 0.88);
+  color: #12306b;
+}
+
+.band-light .tag {
+  color: #9a5500;
+}
+
+.band-flush {
+  padding: 0;
+}
+
+.flush-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.flush-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 56rem) / 2 + 1.5rem));
+}
+
+.flush-split img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  mix-blend-mode: multiply;
+  border: 0;
+}
+
+@media (max-width: 40rem) {
+  .flush-split {
+    grid-template-columns: 1fr;
+  }
+
+  .flush-text {
+    padding: 3rem 1.5rem;
+  }
+
+    .flush-split img {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 41rem) {
+  .split-video {
+    max-width: 76rem;
+    grid-template-columns: 2fr 1fr;
+  }
+}
